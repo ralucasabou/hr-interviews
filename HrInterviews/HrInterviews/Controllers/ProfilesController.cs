@@ -7,10 +7,12 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using HrInterviews.Data;
 using HrInterviews.Data.Entities;
+using Microsoft.AspNetCore.Authorization;
 
 namespace HrInterviews.Controllers
 
 {
+    [Authorize]
     public class ProfilesController : Controller
     {
         private readonly ApplicationDbContext _context;
