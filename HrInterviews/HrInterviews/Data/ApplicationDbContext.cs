@@ -16,5 +16,7 @@ namespace HrInterviews.Data
 
         public DbSet<Profile> Profiles { get; set; }
 
+        public DbSet<Interview> Interviews { get; set; }
+
     }
 }

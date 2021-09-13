@@ -1,0 +1,48 @@
+﻿@model IEnumerable<HrInterviews.Models.InterviewViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Profile)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InterviewDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Feedback)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Profile.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InterviewDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Feedback)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.InterviewId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.InterviewId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.InterviewId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
